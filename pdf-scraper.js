@@ -31,12 +31,13 @@ axios(url).then(response => {
             let html = response.data;
             let $ = cheerio.load(html);
             let h1Tags = $('h1').text();
-            let bodyText = $('body > div > div:nth-child(5)');
-            fs.writeFile("representatives/" + h1Tags, bodyText, (err) => {
+            // h1Tags = h1Tags.text();
+            let pdfLinks = $("a[href$='.pdf']").attr("href");
+            fs.writeFile("pdfs/" + h1Tags, pdfLinks, (err) => {
                 // throws an error, you could also catch it here
                 if (err) throw err.message;
                 // success case, the file was saved
-                console.log('text saved!');
+                console.log('pdf link saved! ' + h1Tags);
             });
         }).catch(console.error);
     }
