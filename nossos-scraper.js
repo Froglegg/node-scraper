@@ -11,7 +11,6 @@ axios(url).then(response => {
     let selectOptions = $('#jumpMenu > option');
     let optionsArray = [];
 
-
     selectOptions.each(function() {
         let link = $(this).val();
         optionsArray.push(link);
