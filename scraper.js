@@ -37,6 +37,12 @@ axios(url).then(response => {
                 // success case, the file was saved
                 console.log('text saved!');
             });
+
+fs.appendFile('all.txt', bodyText, function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
         }).catch(console.error);
     }
 
