@@ -1,0 +1,1 @@
+{"title":"Home","dataLayer":"\r\n        var dataLayer = dataLayer || [];\r\n        dataLayer.push({\r\n            'pageType': 'Home',\r\n            'siteType': 'brochure',\r\n            'bizCategory': 'corporate',\r\n            'pageLanguage': 'English',\r\n            'gatedType': 'non gated'\r\n        });\r\n    "}
