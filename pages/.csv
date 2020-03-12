@@ -1,0 +1,11 @@
+title,dataLayer
+Home,"
+        var dataLayer = dataLayer || [];
+        dataLayer.push({
+            'pageType': 'Home',
+            'siteType': 'brochure',
+            'bizCategory': 'corporate',
+            'pageLanguage': 'English',
+            'gatedType': 'non gated'
+        });
+    "
