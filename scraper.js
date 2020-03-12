@@ -49,14 +49,11 @@ firstTierLinks.forEach((link, idx) => {
     .catch(err => console.log(err));
 });
 
-// for loops are blocking calls, so this function will run after the for loops is finished
 function createCSV() {
-  // console.log(pageArray);
   function sortNumber(a, b) {
     return a.id - b.id;
   }
   let arrangedArray = pageArray.sort(sortNumber);
-  console.log(arrangedArray);
   // construct CSV from array of page objects
   const csvFromArrayOfObjects = convertArrayToCSV(arrangedArray);
   // write to file
@@ -64,44 +61,3 @@ function createCSV() {
     console.log(err);
   });
 }
-
-// axios(url)
-//   .then(response => {
-//     let html = response.data;
-//     var $ = cheerio.load(html); // xmlMode: true is a workaround for many cheerio bugs.
-//     // let links = $("a");
-//     // console.log(links[0].attribs.href);
-
-//     let pageTitle = $('meta[property="og:title"]').attr("content");
-//     let obj = $("script:not([src])");
-//     let result;
-
-//     Object.values(obj).forEach(el => {
-//       try {
-//         let test = JSON.stringify(el.children[0].data).match(/var dataLayer/);
-//         if (test[0] == "var dataLayer") {
-//           //   console.log(el.children[0].data);
-//           page.dataLayer = el.children[0].data;
-//           //   console.log(JSON.parse(page.dataLayer));
-//           return (result = "dataExists");
-//         }
-//       } catch (err) {
-//         // console.log("ERROR");
-//       }
-//     });
-
-//     if (result === "dataExists") {
-//       console.log(page);
-//       pageArray.push(page);
-//       console.log(pageArray);
-//       const csvFromArrayOfObjects = convertArrayToCSV(pageArray);
-//       console.log(csvFromArrayOfObjects);
-//       // fs.writeFile("pages/" + page.title + ".md", JSON.stringify(page), err => {
-//       //   console.log(err);
-//       // });
-//       fs.writeFile("pages/test.csv", csvFromArrayOfObjects, "utf8", err => {
-//         console.log(err);
-//       });
-//     }
-//   })
-//   .catch(console.error);
