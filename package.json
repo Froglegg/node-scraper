@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Froglegg/node-scraper#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "convert-array-to-csv": "^1.0.10",
     "jquery": "^3.4.1"
